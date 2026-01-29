@@ -21,12 +21,12 @@ jobs:
       - name: Checkout site
         uses: actions/checkout@v4
 
-      - name: Checkout datamining (CN)
-        uses: actions/checkout@v4
-        with:
-          repository: thewakingsands/ffxiv-datamining-cn
-          path: vendor/ffxiv-datamining-cn
-          fetch-depth: 1
+      #- name: Checkout datamining (CN)
+       # uses: actions/checkout@v4
+        #with:
+         # repository: thewakingsands/ffxiv-datamining-cn
+          #path: vendor/ffxiv-datamining-cn
+          #fetch-depth: 1
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -37,8 +37,8 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Build manual data
-        run: node scripts/build-manual.mjs vendor/ffxiv-datamining-cn
+      #- name: Build manual data
+        #run: node scripts/build-manual.mjs vendor/ffxiv-datamining-cn
 
       - name: Build site
         run: npm run build
