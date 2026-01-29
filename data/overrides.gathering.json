@@ -1,0 +1,14 @@
+{
+  "11975": [
+    {
+      "type": "gathering",
+      "job": "採礦",
+      "level": 50,
+      "zone": "示例區域",
+      "mapImage": "",
+      "markers": [{ "x": 0.45, "y": 0.62 }],
+      "timed": { "startEtHours": [0, 12], "durationEtHours": 2 },
+      "note": "示例：ET 0/12 點出現，各 2 小時。之後請依繁中服資料填入"
+    }
+  ]
+}
