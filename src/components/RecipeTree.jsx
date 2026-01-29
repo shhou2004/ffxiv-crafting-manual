@@ -11,15 +11,19 @@ import { iconUrl } from "../lib/icon.js";
  */
 export default function RecipeTree({ rootId, recipeByResult, metaMap }) {
   // --- Universalis 設定（可在 UI 改） ---
-  const [dc, setDc] = useState(() => localStorage.getItem("uni_dc") || "陸行鳥-繁中服");
-
+  const [dc, setDc] = useState(() => {
+    const v = localStorage.getItem("uni_dc") || "陸行鳥";
+    // 避免舊版本/錯誤字串造成 404
+    if (v === "陸行鳥-繁中服") return "陸行鳥";
+    return v;
+  });
   // itemId -> { price, worldName, updatedAt }
   const [priceMap, setPriceMap] = useState(() => new Map());
   const [priceErr, setPriceErr] = useState("");
 
   // 允許你常用的 DC 快選（想加自己加）
   const dcOptions = [
-    "陸行鳥-繁中服",
+    "陸行鳥",
   ];
 
   // --- 取得某個 resultId 的「材料 pairs」 ---
